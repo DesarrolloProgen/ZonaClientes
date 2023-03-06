@@ -1,0 +1,26 @@
+
+
+First(DataCardValue34.Attachments.Value)
+
+ 'CargadeArchivosSharePoint.'.Run(
+            {
+                 contentBytes: First(DataCardValue34.Attachments.Value).Value,
+                 name: First(DataCardValue34.Attachments.Name).Name
+            },
+            _Cliente.ID,
+            If(DataCardValue1.Value = false , 
+            {},
+            { 
+                file_1 :
+                {
+                 contentBytes: First(DataCardValue34_1.Attachments.Value).Value,
+                 name: First(DataCardValue34_1.Attachments.Name).Name
+                }
+            }
+            )
+)
+
+https://apps.powerapps.com/play/325b1986-a88a-4375-9b73-5b349eae5346?Id=
+
+If((Not(IsBlank(_Cliente.Observaciones_Documentos_cargados)) || _Cliente.carga_Documentos = true) && IsBlank(_Cliente.Observaciones_Tesoreria), 219, 363)
+If((Not(IsBlank(_Cliente.Observaciones_Documentos_cargados)) || _Cliente.carga_Documentos = true) && IsBlank(_Cliente.Observaciones_Tesoreria), 259, 115)
