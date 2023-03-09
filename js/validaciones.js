@@ -11,7 +11,7 @@
     var cedula = document.getElementById("cc");
     var numeroNIT =document.getElementById("numeroNIT");
     var codigoNIT =document.getElementById("codigoNIT");
-    var nit = numeroNIT.value + "-" +codigoNIT.value;
+    var nit;
     var nombre_cliente = document.getElementById("nombreCliente");
     var requiere_cupo;
     var requiere_cupo_si = document.getElementById("requiere_cupo_si");

@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
             event.preventDefault();
             console.log(validaciones());
             if (!validaciones()) return false;
-            console.log("Se inicio a crear el data")
+            nit = numeroNIT.value + " - " + codigoNIT.value
             if (tipo_identificacion.value == "CC"){
                   data = {
                         fecha: fechayHora,
@@ -75,7 +75,7 @@ window.addEventListener('load', function () {
             
             console.log(data);
             cargando();
-            enviarPeticion(settings);
+            // enviarPeticion(settings);
       });
 
     /*-------------------------------------------------------------------------------------------- */
