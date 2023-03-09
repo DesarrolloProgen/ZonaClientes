@@ -125,12 +125,24 @@ window.addEventListener('load', function () {
     /*--------------------------------  Guardar Archivo en Array  ---------------------------------*/
 
     function saveFileClienteNacional(f) {
+      const nacional = {
+        FormularioNacional: "Formulario Nacional",
+        copiacedula: "Copia de Cedula",
+        copiaRut: "Copia Rut",
+        camaracomercio: "Camara y Comercio",
+        actaConsorcial: "Acta Consorcial",
+        certificacionesBASC: "Certificaciones",
+        estadofinan: "Estados Financieros",
+        renta: "Declaracion de Renta",
+        referenciaComercial: "Referencia Comercial",
+        referenciaBancaria: "Referencia Bancaria"
+      }
       const file = f.files[0];
       const fr = new FileReader();
       fr.addEventListener("load", function () {
         let contenido = fr.result.split(",");
         const obj = {
-          archivo: f.name,
+          archivo: nacional[f.name],
           filename: file.name,
           mimeType: file.type,
           contenido: {
@@ -148,12 +160,20 @@ window.addEventListener('load', function () {
     }
 
     function saveFileClienteExterior(f) {
+      const exterior = {
+        FormularioExterior: "Formulario Exterior",
+        copiacedula: "Copia de Cedula",
+        registroTributario: "Registro Tributario",
+        CertificadoExistencia: "Certificado de Existencia",
+        certificacionesBASC: "Certificado BASC",
+        estadofinan:"Estados Financieros"
+      }
       const file = f.files[0];
       const fr = new FileReader();
       fr.addEventListener("load", function () {
         let contenido = fr.result.split(",");
         const obj = {
-          archivo: f.name,
+          archivo: exterior[f.name],
           filename: file.name,
           mimeType: file.type,
           contenido: {
