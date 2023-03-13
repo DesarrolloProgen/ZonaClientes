@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
 
       const form = document.forms[0];
       var now = new Date();
-      var fecha = now.getDate() + '-' + (now.getMonth() + 1) + '-' + now.getFullYear();
+      var fecha = (now.getMonth() + 1) + '-' + now.getDate() + '-' + now.getFullYear();
       var minutos = now.getMinutes()
       if(minutos<10) minutos="0"+minutos;
       var hora = now.getHours() + ':' + minutos;
