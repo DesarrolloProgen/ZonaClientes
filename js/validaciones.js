@@ -25,6 +25,27 @@
     var email_contactoProgen =document.getElementById("emailContactoProgen");
     var clienteNacional = [];
     var clienteExterior = [];
+    const nacional = {
+      FormularioNacional: "Formulario Nacional",
+      copiacedula: "Copia de Cedula",
+      copiaRut: "Copia Rut",
+      camaracomercio: "Camara y Comercio",
+      actaConsorcial: "Acta Consorcial",
+      certificacionesBASC: "Certificaciones",
+      estadofinan: "Estados Financieros",
+      renta: "Declaracion de Renta",
+      referenciaComercial: "Referencia Comercial",
+      referenciaBancaria: "Referencia Bancaria"
+    }
+    const exterior = {
+      FormularioExterior: "Formulario Exterior",
+      copiacedulaExt: "Copia de Cedula",
+      registroTributario: "Registro Tributario",
+      CertificadoExistencia: "Certificado de Existencia",
+      certificacionesBASC: "Certificado BASC",
+      estadofinanExt:"Estados Financieros"
+    }
+
 
 /* ------------------------------------------------------------------------------------- */
 /*                                       VALIDACIONES                                    */
@@ -197,9 +218,8 @@
 /*         Validaciones de Datos adicionales en caso de Tipo Cliente = Cliente Nacional  */
 
         if(tipo_cliente.value == "Cliente Nacional"){
-            
             /* Validacion de Tipo de Sociedad */
-
+          let obligatoriosNacional = document.querySelectorAll("#clienteNacional input[required]");
             if(tipo_sociedad.value == "" || tipo_sociedad.value == "Selecciona una opción" || tipo_sociedad.value == null){
               document.getElementById("headermensaje").style.background = '#ff3c37';
               document.getElementById('titulomensaje').innerHTML='ERROR';
@@ -208,78 +228,13 @@
             }
 
             /* Validaciones de las imagenes Obligatorias para cliente Nacional */
-    
-            if(clienteNacional[0] == null){
-              document.getElementById("headermensaje").style.background = '#ff3c37';
-              document.getElementById('titulomensaje').innerHTML='ERROR';
-              document.getElementById('mensaje').innerHTML='Debe subir un archivo para el Formato de registro de Clientes';
-              return false;
-            }
-    
-            if(clienteNacional[1] == null){
-              document.getElementById("headermensaje").style.background = '#ff3c37';
-              document.getElementById('titulomensaje').innerHTML='ERROR';
-              document.getElementById('mensaje').innerHTML='Debe subir un archivo para la cedula del representante legal';
-              return false;
-            }
-    
-            if(clienteNacional[2] == null && tipo_sociedad.value != "Persona Natural"){
-              document.getElementById("headermensaje").style.background = '#ff3c37';
-              document.getElementById('titulomensaje').innerHTML='ERROR';
-              document.getElementById('mensaje').innerHTML='Debe subir un archivo para el RUT de su empresa';
-              return false;
-            }
-    
-            if(clienteNacional[3] == null && tipo_sociedad.value != "Persona Natural"){
-              document.getElementById("headermensaje").style.background = '#ff3c37';
-              document.getElementById('titulomensaje').innerHTML='ERROR';
-              document.getElementById('mensaje').innerHTML='Debe subir un archivo de certificado de camara y comercio o acta Consorcial';
-              return false;
-            }
-
-            /* Validacion de adjuntos requeridos adicionales en caso de requerir CUPO de Credito */
-            if(requiere_cupo_si.checked){
-    
-              if(clienteNacional[2] == null && tipo_sociedad.value == "Persona Natural"){
+            console.log(obligatoriosNacional)
+            for (let i = 0; i < obligatoriosNacional.length; i++) {
+              if(!(clienteNacional.find((archivo) => archivo.archivo === nacional[obligatoriosNacional[i].name]))){
                 document.getElementById("headermensaje").style.background = '#ff3c37';
                 document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo para el RUT de su empresa';
-                return false;
-              }
-    
-              if(clienteNacional[3] == null && tipo_sociedad.value == "Persona Natural"){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo de certificado de camara y comercio o acta Consorcial';
-                return false;
-              }
-    
-              if(clienteNacional[4] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo de estados financieros comparativos a los últimos 2 años';
-                return false;
-              }
-    
-              if(clienteNacional[5] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo de declaración de renta del año anterior';
-                return false;
-              }
-    
-              if(clienteNacional[6] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo de referencia comercial del año en curso';
-                return false;
-              }
-    
-              if(clienteNacional[7] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo de referencia bancaria del año en curso';
-                return false;
+                document.getElementById('mensaje').innerHTML='Debe subir un archivo para el documento ' + nacional[obligatoriosNacional[i].name];
+                return false;  
               }
             }
           }
@@ -287,40 +242,17 @@
 /*     Validaciones de Datos adicionales en caso de Tipo Cliente = Cliente Exterior  */
 
         if(tipo_cliente.value == "Cliente Exterior"){
-            if(clienteExterior[0] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo para el formulario de registro de Clientes';
-                return false;
+          let obligatoriosExterior = document.querySelectorAll("#clienteExterior input[required]");
+          console.log(obligatoriosExterior)
+          for (let i = 0; i < obligatoriosExterior.length; i++) {
+            if(!(clienteExterior.find((archivo) => archivo.archivo === exterior[obligatoriosExterior[i].name]))){
+              document.getElementById("headermensaje").style.background = '#ff3c37';
+              document.getElementById('titulomensaje').innerHTML='ERROR';
+              document.getElementById('mensaje').innerHTML='Debe subir un archivo para el documento ' + exterior[obligatoriosExterior[i].name];
+              return false;  
             }
-            if(clienteExterior[1] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo para la cédula de ciudadania del representante legal';
-                return false;
-            }
-            if(clienteExterior[2] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo de la copia del RUT de su empresa';
-                return false;
-            }
-            if(clienteExterior[3] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo del certificado de existencia y representación legal';
-                return false;
-            }
-            if(requiere_cupo_si.checked){
-            if(clienteExterior[5] == null){
-                document.getElementById("headermensaje").style.background = '#ff3c37';
-                document.getElementById('titulomensaje').innerHTML='ERROR';
-                document.getElementById('mensaje').innerHTML='Debe subir un archivo de los estados financieros comparativos de los últimos 2 años a 31 de Dic';
-                return false;
-            }
-            }      
+          }
         }
         
-        return true;
-
+        submitForm();
     }
