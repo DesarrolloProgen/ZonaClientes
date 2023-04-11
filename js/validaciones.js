@@ -187,22 +187,13 @@
 
         /* Nombre de contacto de Progen*/
 
-        if(nombre_contactoProgen.value == "" || nombre_contactoProgen.value == null){
+        if(nombre_contactoProgen.value == "" || nombre_contactoProgen.value == null || nombre_contactoProgen.value == "Selecciona una opción"){
             document.getElementById("headermensaje").style.background = '#ff3c37';
             document.getElementById('titulomensaje').innerHTML='ERROR';
             document.getElementById('mensaje').innerHTML='Debe ingresar una persona de contacto ';
             return false;
         }
-
-        /* Email Contacto de Progen */
-
-        if(email_contactoProgen.value == "" || email_contactoProgen.value == null || validar_email(email_contactoProgen.value) == false){
-          document.getElementById("headermensaje").style.background = '#ff3c37';
-          document.getElementById('titulomensaje').innerHTML='ERROR';
-          document.getElementById('mensaje').innerHTML='Debe ingresar el correo de la persona de contacto';
-          return false;
-        }
-
+        
         /*Obtener Check del Radio Button*/
 
         if(requiere_cupo_si.checked){
