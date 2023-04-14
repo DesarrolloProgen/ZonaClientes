@@ -122,6 +122,7 @@ function divisionOnchange(selected) {
     listContacto += "<option value='Karen Algutria'>Karen Algutria</option>";
     listContacto += "<option value='Juan Rolon'>Juan Rolón</option>";
     listContacto += "<option value='Fernando Ayala'>Fernando Ayala</option>";
+    listContacto += "<option value='Diego Martinez'>Diego Martinez/option>";
     document.getElementById("fila_credito").style.display = "";
   }
 
@@ -218,6 +219,11 @@ function nombreContactoOnchange(selected) {
 
   if (selected.value == "Fernando Ayala") {
     var correo = "fernando.ayala@progen.com.co";
+    $("#emailContactoProgen").val(correo);
+  }
+
+  if (selected.value == "Diego Martinez") {
+    var correo = "instrumentacion.comercial2@progen.com.co";
     $("#emailContactoProgen").val(correo);
   }
 
