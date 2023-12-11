@@ -115,7 +115,9 @@ function divisionOnchange(selected) {
   if (selected.value == "Exportaciones") {
     listContacto +=
       "<option value='Jonathan Barreto'>Jonathan Barreto</option>";
-    listContacto += "<option value='Gilberto Osorio'>Gilberto Osorio</option>";
+    listContacto += "<option value='Armando Lacouture'>Armando Lacouture</option>";
+    listContacto += "<option value='Gabriel Restrepo'>Gabriel Restrepo</option>";
+    listContacto += "<option value='Carolina Montenegro'>Carolina Montenegro</option>";
   }
 
   if (selected.value == "Instrumentación") {
@@ -177,10 +179,21 @@ function nombreContactoOnchange(selected) {
     $("#emailContactoProgen").val(correo);
   }
 
-  if (selected.value == "Gilberto Osorio") {
-    var correo = "gilberto.osorio@progen.com.co";
+  if (selected.value == "Armando Lacouture") {
+    var correo = "exportaciones.representante@progen.com.co";
     $("#emailContactoProgen").val(correo);
   }
+  
+  if (selected.value == "Gabriel Restrepo") {
+    var correo = "exportaciones.representante2@progen.com.co";
+    $("#emailContactoProgen").val(correo);
+  }
+  
+  if (selected.value == "Carolina Montenegro") {
+    var correo = "exportaciones.asistente@progen.com.co";
+    $("#emailContactoProgen").val(correo);
+  }
+  
 
   if (selected.value == "Pilar Hernandez") {
     var correo = "pilar.hernandez@royalcondor.com";
