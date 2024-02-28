@@ -142,12 +142,13 @@ function divisionOnchange(selected) {
     listContacto += "<option value='Diego Ramirez'>Diego Ramirez</option>";
     listContacto += "<option value='Eduardo Novoa'>Eduardo Novoa</option>";
     listContacto += "<option value='Ever Mendoza'>Ever Mendoza</option>";
+    listContacto += "<option value='Franklin Gilón'>Franklin Gilón</option>";
     listContacto += "<option value='Fredy Rubiano'>Fredy Rubiano</option>";
     listContacto += "<option value='Jerson Camargo'>Jerson Camargo</option>";
     listContacto +=
       "<option value='Jose Ricardo Sarmiento'>Jose Ricardo Sarmiento</option>";
-    listContacto += "<option value='Mauricio Posada'>Mauricio Posada</option>";
     listContacto += "<option value='Jose Vargas'>Jose Vargas</option>";
+    listContacto += "<option value='Mauricio Posada'>Mauricio Posada</option>";
     listContacto += "<option value='Pilar Hernandez'>Pilar Hernandez</option>";
     listContacto += "<option value='Ricardo Arias'>Ricardo Arias</option>";
     listContacto += "<option value='Wilmar Buitrago'>Wilmar Buitrago</option>";
@@ -262,6 +263,11 @@ function nombreContactoOnchange(selected) {
 
   if (selected.value == "Fredy Rubiano") {
     var correo = "fredy.rubiano@royalcondor.com";
+    $("#emailContactoProgen").val(correo);
+  }
+
+  if (selected.value == "Franklin Gilón") {
+    var correo = "rc.narinoyputumayo@royalcondor.com";
     $("#emailContactoProgen").val(correo);
   }
 
