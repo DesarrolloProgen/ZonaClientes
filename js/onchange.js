@@ -149,7 +149,7 @@ function divisionOnchange(selected) {
       "<option value='Jose Ricardo Sarmiento'>Jose Ricardo Sarmiento</option>";
     listContacto += "<option value='Jose Vargas'>Jose Vargas</option>";
     listContacto += "<option value='Mauricio Posada'>Mauricio Posada</option>";
-    listContacto += "<option value='Pilar Hernandez'>Pilar Hernandez</option>";
+    listContacto += "<option value='Jorge Betancourt'>Jorge Betancourt</option>";
     listContacto += "<option value='Ricardo Arias'>Ricardo Arias</option>";
     listContacto += "<option value='Wilmar Buitrago'>Wilmar Buitrago</option>";
   }
@@ -196,8 +196,8 @@ function nombreContactoOnchange(selected) {
   }
   
 
-  if (selected.value == "Pilar Hernandez") {
-    var correo = "pilar.hernandez@royalcondor.com";
+  if (selected.value == "Jorge Betancourt") {
+    var correo = "tap.lider@progen.com.co";
     $("#emailContactoProgen").val(correo);
   }
 
