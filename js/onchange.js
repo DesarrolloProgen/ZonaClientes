@@ -154,6 +154,10 @@ function divisionOnchange(selected) {
     listContacto += "<option value='Wilmar Buitrago'>Wilmar Buitrago</option>";
   }
 
+  if (selected.value == "RoyalCondor - Exhibidores") {
+    listContacto += "<option value='Mariana Vanegas'>Mariana Vanegas</option>";
+  }
+
   if (selected.value == "Señalización") {
     listContacto +=
       "<option value='María Nelly Betancourt'>María Nelly Betancourt</option>";
@@ -210,6 +214,7 @@ function nombreContactoOnchange(selected) {
     var correo = "carola.perdomo@royalcondor.com";
     $("#emailContactoProgen").val(correo);
   }
+
 
   if (selected.value == "Daniel Mora") {
     var correo = "daniel.mora@royalcondor.com";
@@ -295,6 +300,14 @@ function nombreContactoOnchange(selected) {
     var correo = "wilmar.buitrago@royalcondor.com";
     $("#emailContactoProgen").val(correo);
   }
+
+  if (selected.value == "Mariana Vanegas") {
+    var correo = "rc.jefemercadeoyventas@royalcondor.com";
+    $("#emailContactoProgen").val(correo);
+  }
+
+
+  
 
   if (selected.value == "Daniel Soler") {
     var correo = "daniel.soler@progen.com.co";
