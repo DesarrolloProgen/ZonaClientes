@@ -85,8 +85,8 @@ function enviarPeticion(settings) {
         document.getElementById('mensaje').innerHTML='Se realizó correctamente su registro.';  
         document.getElementById("formulario").reset();
         $(".custom-file-label").addClass("selected").html("Choose File");
-        clienteNacional = {};
-        clienteExterior = {};
+        clienteNacional = [];
+        clienteExterior = [];
         document.getElementById("cedula").style.display = "none";
         document.getElementById("nit").style.display = "none";
         document.getElementById("clienteNacional").style.display = "none";
@@ -138,7 +138,6 @@ function cargando() {
       if (file) {
         fr.readAsDataURL(file);
       }
-      console.log(clienteNacional);
     }
 
     function saveFileClienteExterior(f) {
