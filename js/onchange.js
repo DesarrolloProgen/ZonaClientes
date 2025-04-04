@@ -112,6 +112,12 @@ function divisionOnchange(selected) {
       "<option value='Patricia Carbonell'>Patricia Carbonell</option>";
   }
 
+  if (selected.value == "Fumigación Drones") {
+    listContacto +=
+      "<option value='Fabio Carrascal'>Fabio Carrascal</option>";
+    listContacto += "<option value='Julian Rueda'>Julian Rueda</option>";
+  }
+
   if (selected.value == "Exportaciones") {
     listContacto +=
       "<option value='Jonathan Barreto'>Jonathan Barreto</option>";
@@ -130,9 +136,6 @@ function divisionOnchange(selected) {
 
   if (selected.value == "Laboratorio Metrología") {
     listContacto += "<option value='Fredy Silva'>Fredy Silva</option>";
-    var cupo = document.getElementById("requiere_cupo_no");
-    document.getElementById("fila_credito").style.display = "none";
-    cupo.checked = true;
   }
 
   if (selected.value == "RoyalCondor") {
@@ -176,6 +179,14 @@ function divisionOnchange(selected) {
 function nombreContactoOnchange(selected) {
   if (selected.value == "Jose Ricardo Sarmiento") {
     var correo = "rc.limpiezaydesinfeccion@royalcondor.com";
+    $("#emailContactoProgen").val(correo);
+  }
+  if (selected.value == "Fabio Carrascal") {
+    var correo = "id.liderdrones01@progen.com.co";
+    $("#emailContactoProgen").val(correo);
+  }
+  if (selected.value == "Julian Rueda") {
+    var correo = "id.liderdrones02@progen.com.co";
     $("#emailContactoProgen").val(correo);
   }
 
