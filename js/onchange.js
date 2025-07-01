@@ -141,7 +141,6 @@ function divisionOnchange(selected) {
   if (selected.value == "RoyalCondor") {
     listContacto += "<option value='Carola Perdomo'>Carola Perdomo</option>";
     listContacto += "<option value='Daniel Mora'>Daniel Mora</option>";
-    listContacto += "<option value='Diana Nuñez'>Diana Nuñez</option>";
     listContacto += "<option value='Diego Ramirez'>Diego Ramirez</option>";
     listContacto += "<option value='Eduardo Novoa'>Eduardo Novoa</option>";
     listContacto += "<option value='Ever Mendoza'>Ever Mendoza</option>";
@@ -229,11 +228,6 @@ function nombreContactoOnchange(selected) {
 
   if (selected.value == "Daniel Mora") {
     var correo = "daniel.mora@royalcondor.com";
-    $("#emailContactoProgen").val(correo);
-  }
-
-  if (selected.value == "Diana Nuñez") {
-    var correo = "rc.cauca@royalcondor.com ";
     $("#emailContactoProgen").val(correo);
   }
 
