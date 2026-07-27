@@ -114,7 +114,7 @@ function divisionOnchange(selected) {
 
     if (selected.value == "Fumigación Drones") {
         listContacto +=
-            "<option value='Fabio Carrascal'>Fabio Carrascal</option>";
+            "<option value='Britney Camila Rojas'>Britney Camila Rojas</option>";
         listContacto += "<option value='Julian Rueda'>Julian Rueda</option>";
     }
 
@@ -182,8 +182,8 @@ function nombreContactoOnchange(selected) {
         var correo = "rc.limpiezaydesinfeccion@royalcondor.com";
         $("#emailContactoProgen").val(correo);
     }
-    if (selected.value == "Fabio Carrascal") {
-        var correo = "id.liderdrones01@progen.com.co";
+    if (selected.value == "Britney Camila Rojas") {
+        var correo = "rc.representantedrones@royalcondor.com";
         $("#emailContactoProgen").val(correo);
     }
     if (selected.value == "Julian Rueda") {
